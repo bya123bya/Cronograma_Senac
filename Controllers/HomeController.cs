@@ -7,7 +7,7 @@ namespace CronogramaSenac.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
+//blaaaaaa
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
