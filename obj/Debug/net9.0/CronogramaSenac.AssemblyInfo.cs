@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CronogramaSenac")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be8c8b9e6f9a62d0552e27d459ac8dcd855a2623")]
 [assembly: System.Reflection.AssemblyProductAttribute("CronogramaSenac")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CronogramaSenac")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

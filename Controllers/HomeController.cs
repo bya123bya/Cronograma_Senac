@@ -6,6 +6,7 @@ namespace CronogramaSenac.Controllers;
 
 public class HomeController : Controller
 {
+    /*atualizando"*/
     private readonly ILogger<HomeController> _logger;
 //blaaaaaa
     public HomeController(ILogger<HomeController> logger)
@@ -17,6 +18,8 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    // alo 
 
     public IActionResult Privacy()
     {

@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CronogramaSenac", "CronogramaSenac.csproj", "{89E524B1-2B76-8355-2803-AE21BEBFA40E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89E524B1-2B76-8355-2803-AE21BEBFA40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89E524B1-2B76-8355-2803-AE21BEBFA40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89E524B1-2B76-8355-2803-AE21BEBFA40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89E524B1-2B76-8355-2803-AE21BEBFA40E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C97E12C-7500-4560-A433-97580D58D964}
+	EndGlobalSection
+EndGlobal
