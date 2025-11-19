@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\CronogramaSenac.csproj": {}
+    "C:\\Users\\willian.fsantos11\\OneDrive - SENAC - SP\\Área de Trabalho\\BackEnd\\Cronograma_Senac\\CronogramaSenac.csproj": {}
   },
   "projects": {
-    "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\CronogramaSenac.csproj": {
+    "C:\\Users\\willian.fsantos11\\OneDrive - SENAC - SP\\Área de Trabalho\\BackEnd\\Cronograma_Senac\\CronogramaSenac.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\CronogramaSenac.csproj",
+        "projectUniqueName": "C:\\Users\\willian.fsantos11\\OneDrive - SENAC - SP\\Área de Trabalho\\BackEnd\\Cronograma_Senac\\CronogramaSenac.csproj",
         "projectName": "CronogramaSenac",
-        "projectPath": "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\CronogramaSenac.csproj",
-        "packagesPath": "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\obj\\",
+        "projectPath": "C:\\Users\\willian.fsantos11\\OneDrive - SENAC - SP\\Área de Trabalho\\BackEnd\\Cronograma_Senac\\CronogramaSenac.csproj",
+        "packagesPath": "C:\\Users\\willian.fsantos11\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\willian.fsantos11\\OneDrive - SENAC - SP\\Área de Trabalho\\BackEnd\\Cronograma_Senac\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\beatryz.bllabbe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\willian.fsantos11\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
