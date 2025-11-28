@@ -21,3 +21,4 @@ public partial class Usuario
 
     public virtual ICollection<UsuarioTurma> UsuarioTurmas { get; set; } = new List<UsuarioTurma>();
 }
+

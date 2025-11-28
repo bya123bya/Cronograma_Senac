@@ -1,3 +1,11 @@
+@import "bootstrap-icons/font/bootstrap-icons";
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 14px;
 }
@@ -17,10 +25,6 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
-}
-
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
@@ -28,4 +32,45 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+.add-uc-row td {
+
+  padding: 18px;
+
+  background: #f7f9ff;
+
+  color: #0d6efd;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  border-left: 3px solid transparent;
+
+  transition: 0.2s ease;
+
+}
+.group-row td {
+  background: #ffffff !important;
+  border-top: 30px solid #f5f6fa !important;
+  border-bottom: 10px solid #f5f6fa !important;
+}
+.add-uc-row:hover td {
+
+  background: #eef3ff;
+
+  border-left: 3px solid #0d6efd;
+
+}
+.table i.bi-clock {
+  color: #f8b500;
+  font-size: 18px;
+}
+table.table-hover tbody tr td {
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  vertical-align: middle;
+}
+.table-hover tbody tr:hover td {
+  background-color: #eef4ff !important;
 }

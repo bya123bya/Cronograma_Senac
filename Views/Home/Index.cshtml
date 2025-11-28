@@ -1,8 +1,121 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="container-fluid">
+    <div class="row">
+        <!-- Main Content -->
+        <main class="col-md-10 ml-sm-auto px-4">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">#Senac Itaquera</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cursos</li>
+                </ol>
+            </nav>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+            <!-- Toolbar -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="btn-group">
+                    <button class="btn btn-outline-secondary">Lista</button>
+                    <button class="btn btn-outline-secondary">Painel</button>
+                    <button class="btn btn-outline-secondary">Calendário</button>
+                    <button class="btn btn-outline-secondary">Tabela</button>
+                    <button class="btn btn-outline-secondary">Visualização</button>
+                </div>
+                <button class="btn btn-primary">+ Add Turma</button>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Nome</th>
+                            <th>Aulas</th>
+                            <th>Total de Aulas</th>
+                            <th>Docente</th>
+                            <th>Data</th>
+                            <th>CH</th>
+                            <th>Observação</th>
+                            <th>Lançamento SS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Grupo 1 -->
+                        <tr class="group-row">
+                            <td colspan="8">
+                                <span class="badge bg-primary rounded-pill px-3 py-2">Transforme-se</span>
+                            </td>
+                        </tr>
+                        <td>Revisão do Capítulo 1</td>
+                        <td>1</td>
+                        <td>18</td>
+                        <td>Prof. Ana Silva</td>
+                        <td>20/05/2024</td>
+                        <td>3:30</td>
+                        <td><i class="fa-regular fa-comment-dots"></i></td>
+                        <td><input type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                            <td>Planejar Aula Interativa</td>
+                            <td>6</td>
+                            <td>18</td>
+                            <td>Prof. João Mendes</td>
+                            <td>25/05/2024</td>
+                            <td>3:30</td>
+                            <td><i class="fa-regular fa-comment-dots"></i></td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                        <tr class="add-uc-row">
+                            <td colspan="8">
+                                <i class="bi bi-plus-lg me-2"></i>Adicionar UC
+                            </td>
+                        </tr>
+
+                        <!-- Grupo 2 -->
+                        <tr class="group-row">
+                            <td colspan="8">
+                                <span class="badge bg-primary rounded-pill px-3 py-2">Curso livre</span>
+                            </td>
+                        </tr>
+                            <td>Avaliação da Unidade 2</td>
+                            <td>9</td>
+                            <td>18</td>
+                            <td>Prof. Ana Silva</td>
+                            <td>30/05/2024</td>
+                            <td>3:30</td>
+                            <td><i class="fa-regular fa-comment-dots"></i></td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                            <td>Reunião da Equipe Pedagógica</td>
+                            <td>4</td>
+                            <td>18</td>
+                            <td>Coord. Maria L.</td>
+                            <td>02/06/2024</td>
+                            <td>3:30</td>
+                            <td><i class="fa-regular fa-comment-dots"></i></td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                        <tr>
+                            <td>Preparar Materiais Didáticos</td>
+                            <td>2</td>
+                            <td>18</td>
+                            <td>Prof. João Mendes</td>
+                            <td>05/06/2024</td>
+                            <td>3:30</td>
+                            <td><i class="fa-regular fa-comment-dots"></i></td>
+                            <td><input type="checkbox" /></td>
+                        </tr>
+                        <tr class="add-uc-row">
+                            <td colspan="8">
+                                <i class="bi bi-plus-lg me-2"></i>Adicionar UC
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
 </div>

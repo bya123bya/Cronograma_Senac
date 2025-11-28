@@ -1,0 +1,35 @@
+@{
+    Layout = "~/Views/Shared/_LayoutStart.cshtml";
+}
+
+<div style="background: linear-gradient(135deg, #ffdecf, #f3d0f3, #c9e7ff); height: 100vh;">
+
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="card p-4 shadow-sm" style="min-width: 340px; max-width: 380px;">
+
+            <div class="text-center mb-3">
+                <!-- Ícone fictício -->
+                <div class="mb-2">
+                    <span style="font-size: 40px;">🔻</span>
+                </div>
+                <h5 class="fw-bold">Bem-vindo!</h5>
+                <p class="small mb-1">Não tem uma conta? <a href="/cadastro">Criar uma conta</a></p>
+            </div>
+            <!-- Formulário -->
+            <form>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="E-mail de trabalho">
+                </div>
+
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Senha">
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">
+                    Entrar
+                </button>
+            </form>
+
+        </div>
+    </div>
+</div>
