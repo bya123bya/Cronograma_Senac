@@ -16,19 +16,20 @@
                 <p class="small mb-1">Não tem uma conta? <a href="/cadastro">Criar uma conta</a></p>
             </div>
             <!-- Formulário -->
-            <form>
+            <form method="POST" asp-action="Logar" asp-controller="Login">
                 <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="E-mail de trabalho">
+                    <input type="email" name="email" class="form-control" placeholder="E-mail de trabalho" value="@ViewBag.EmailPreenchido" required />
                 </div>
 
                 <div class="mb-3">
-                    <input type="password" class="form-control" placeholder="Senha">
+                    <input type="password" name="senha" class="form-control" placeholder="Senha" required />
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100">
                     Entrar
                 </button>
             </form>
+            <p>@TempData["ErrorMessage"]</p>
 
         </div>
     </div>

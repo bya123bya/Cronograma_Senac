@@ -4796,5 +4796,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\obj\\project.nuget.cache: O provedor de sincronização de nuvem não pôde validar os dados baixados. : 'C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\obj\\project.nuget.cache'."
+    }
+  ]
 }

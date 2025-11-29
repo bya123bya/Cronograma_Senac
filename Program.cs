@@ -26,4 +26,7 @@ app.MapControllerRoute(
     .WithStaticAssets();
 
 
+//Configuraçõo necessária para exibição de imagens no projeto
+app.UseStaticFiles();
+
 app.Run();

@@ -7,9 +7,7 @@ namespace CronogramaSenac.Controllers;
 [Route("[controller]")]
 public class HomeController : Controller
 {
-    /*atualizando"*/
     private readonly ILogger<HomeController> _logger;
-    //blaaaaaa
     public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;

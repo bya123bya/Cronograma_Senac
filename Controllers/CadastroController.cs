@@ -1,12 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+
+
+using System.Security.Claims;
 using CronogramaSenac.Contexts;
 using CronogramaSenac.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace CronogramaSenac.Controllers
 {
@@ -14,7 +13,7 @@ namespace CronogramaSenac.Controllers
     public class CadastroController : Controller
     {
         Senac_cronogramaContext context = new Senac_cronogramaContext();
-        
+
         public IActionResult Index()
         {
             //Forma de listar todos os items da tabela de (tipoUsuários)
@@ -25,15 +24,15 @@ namespace CronogramaSenac.Controllers
             return View();
         }
 
-        [Route("cadastrar")]
-        public IActionResult CadastrarUsuarios(Usuario usuario)
+        [HttpPost("cadastrar")]
+        public IActionResult CadastrarUsuario(Usuario usuario)
         {
             //Armazenar o usuario 
             context.Add(usuario);
             //Registrar as alterações no banco de dados
             context.SaveChanges();
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

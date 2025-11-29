@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\CronogramaSenac.bundle.scp.css",
-      "PackagePath": "staticwebassets\\CronogramaSenac.dcj17av896.bundle.scp.css"
+      "PackagePath": "staticwebassets\\CronogramaSenac.35gr8bma59.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\wwwroot\\css\\site.css",
@@ -11,6 +11,10 @@
     {
       "Id": "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\wwwroot\\img\\senac.jpg",
+      "PackagePath": "staticwebassets\\img\\senac.jpg"
     },
     {
       "Id": "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\wwwroot\\js\\site.js",
