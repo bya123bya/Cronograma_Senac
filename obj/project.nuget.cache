@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "X6xyHsFiC5Y=",
+  "dgSpecHash": "x0b9k1r4xHM=",
   "success": true,
   "projectFilePath": "C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\CronogramaSenac.csproj",
   "expectedPackageFiles": [
@@ -25,7 +25,7 @@
     "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\microsoft.entityframeworkcore.design\\9.0.0\\microsoft.entityframeworkcore.design.9.0.0.nupkg.sha512",
     "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\9.0.0\\microsoft.entityframeworkcore.relational.9.0.0.nupkg.sha512",
     "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\9.0.0\\microsoft.entityframeworkcore.sqlserver.9.0.0.nupkg.sha512",
-    "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.0\\microsoft.entityframeworkcore.tools.10.0.0.nupkg.sha512",
+    "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\9.0.0\\microsoft.entityframeworkcore.tools.9.0.0.nupkg.sha512",
     "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\9.0.0\\microsoft.extensions.caching.abstractions.9.0.0.nupkg.sha512",
     "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\microsoft.extensions.caching.memory\\9.0.0\\microsoft.extensions.caching.memory.9.0.0.nupkg.sha512",
     "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0\\microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
@@ -84,12 +84,5 @@
     "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\beatryz.bllabbe\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\obj\\project.nuget.cache: O provedor de sincronização de nuvem não pôde validar os dados baixados. : 'C:\\Users\\beatryz.bllabbe\\OneDrive - SENAC - SP\\Área de Trabalho\\CronogramaSenac\\obj\\project.nuget.cache'."
-    }
-  ]
+  "logs": []
 }

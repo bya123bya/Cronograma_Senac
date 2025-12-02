@@ -9,7 +9,6 @@ using Microsoft.Extensions.Logging;
 
 namespace CronogramaSenac.Controllers
 {
-    [Route("[controller]")]
     public class LoginController : Controller
     {
         Senac_cronogramaContext context = new Senac_cronogramaContext();
