@@ -2,39 +2,139 @@
 @{
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
-
-<div>
-    <h1>Tela de Cadastro de Usuário</h1>
-    
-    @*Formulário de cadastro de Usuario*@
-    <form method="POST" asp-action="CadastrarUsuario" asp-controller="Cadastro">
-        <div class="form-control">
-            <label for="nome">Nome do usuário</label>
-            <input type="text" name="Nome">
-        </div>
-        <div class="form-control">
-            <label for="Email">Email do usuário</label>
-            <input type="text" name="Email">
-        </div>
-        <div class="form-control">
-            <label for="Senha">Senha do usuário</label>
-            <input type="Password" name="Senha">
-        </div>
-        <div class="form-control">
-            <select class="form-select" name="TipoUsuarioId">
-            <option>Selecione um tipo de usuário</option>
-                    @foreach(TipoUsuario usuario in ViewBag.ListaTiposUsuarios)
+<div class="header-logo">
+    <img src="./img/senac.jpg" alt="Logo Senac" />
+</div>
+<div class="container-cadastro">
+    <div class="card-cadastro">
+        <h2 class="titulo">Criar Conta</h2>
+        @*Formulário de cadastro de Usuario*@
+        <form method="POST" asp-action="CadastrarUsuario" asp-controller="Cadastro">
+            <div class="form-control">
+                <select class="form-select" name="TipoUsuarioId">
+                    <option>Selecione um tipo de usuário</option>
+                    @foreach (TipoUsuario usuario in ViewBag.ListaTiposUsuarios)
                     {
                         <option value="@usuario.Id">@usuario.Tipo</option>
                     }
-            </select>
-        </div>
-        <button class="btn btn-primary" type="submit">Cadastrar</button>
-    </form>
-
-    <img src="./img/senac.jpg" />
+                </select>
+            </div>
+            <div class="form-control">
+                <label for="nome">Nome do usuário</label>
+                <input type="text" name="Nome">
+            </div>
+            <div class="form-control">
+                <label for="Email">Email do usuário</label>
+                <input type="text" name="Email">
+            </div>
+            <div class="form-control">
+                <label for="Senha">Senha do usuário</label>
+                <input type="Password" name="Senha">
+            </div>
+            <div class="form-control">
+                <label for="ConfirmarSenha">Confirmar Senha</label>
+                <input type="Password" name="ConfirmarSenha" required />
+            </div>
+            <div class="botoes">
+                <button type="button" class="btn-cancelar">Cancelar</button>
+                <button type="submit" class="btn-criar">Criar Conta</button>
+            </div>
+        </form>
+    </div>
 </div>
-
 <style>
+    .header-logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+        /* Garante que o logo fique acima de outros elementos */
+    }
 
+    .header-logo img {
+        width: 130px;
+        /* Define o tamanho da imagem menor */
+        height: auto;
+    }
+
+    body {
+        background: #dcdfe4;
+        font-family: Arial, sans-serif;
+    }
+
+    .container-cadastro {
+        width: 100%;
+        min-height: calc(100vh - 40px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    .card-cadastro {
+        background: white;
+        width: 420px;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .titulo {
+        text-align: center;
+        color: #174a8f;
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-input {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+
+    .link-esqueci {
+        font-size: 12px;
+        color: #174a8f;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .botoes {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-cancelar {
+        background: #f0f0f0;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-criar {
+        background: #ff8500;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-criar:hover {
+        background: #e57700;
+    }
 </style>
