@@ -2,35 +2,133 @@
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
 
-<div style="background: linear-gradient(135deg, #ffdecf, #f3d0f3, #c9e7ff); height: 100vh;">
+<div class="header-logo">
+    <img src="./img/senac.jpg" alt="Logo Senac" />
+</div>
 
-    <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="card p-4 shadow-sm" style="min-width: 340px; max-width: 380px;">
+<div class="container-login">
+    <div class="card-login">
 
-            <div class="text-center mb-3">
-                <!-- Ícone fictício -->
-                <div class="mb-2">
-                    <span style="font-size: 40px;">🔻</span>
-                </div>
-                <h5 class="fw-bold">Bem-vindo!</h5>
-                <p class="small mb-1">Não tem uma conta? <a href="/cadastro">Criar uma conta</a></p>
-            </div>
-            <!-- Formulário -->
-            <form method="POST" asp-action="Logar" asp-controller="Login">
-                <div class="mb-3">
-                    <input type="email" name="email" class="form-control" placeholder="E-mail de trabalho" value="@ViewBag.EmailPreenchido" required />
-                </div>
-
-                <div class="mb-3">
-                    <input type="password" name="senha" class="form-control" placeholder="Senha" required />
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100">
-                    Entrar
-                </button>
-            </form>
-            <p>@TempData["ErrorMessage"]</p>
-
+        <div class="text-center mb-3">
+            <h5 class="fw-bold">Bem-vindo!</h5>
         </div>
+
+        <!-- Formulário -->
+        <form method="POST" asp-action="Logar" asp-controller="Login">
+
+            <div class="mb-3">
+                <label>Email do usuário</label>
+                <div class="input-icon">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <input type="email" name="email" placeholder="E-mail do usuário" value="@ViewBag.EmailPreenchido"
+                        required />
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label>Senha</label>
+                <div class="input-icon">
+                    <span class="icon"><i class="fas fa-key"></i></span>
+                    <input type="password" name="senha" placeholder="********" required />
+                    <span class="toggle-password"><i class="fas fa-eye"></i></span>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-entrar w-100">
+                Entrar
+            </button>
+            <div class="text-center mt-3">
+                <p class="small mb-1" style="color: #000000;">Não tem cadastro?</p>
+
+                <a href="/cadastro" class="btn btn-primary btn-entrar w-100">
+                    Cadastre-se
+                </a>
+            </div>
+        </form>
+
+        <p class="text-danger text-center mt-2">@TempData["ErrorMessage"]</p>
     </div>
 </div>
+
+<style>
+    /* ===== BACKGROUND ===== */
+    body {
+        background: linear-gradient(135deg, #e7e2df, #a1baf0, #c9e7ff);
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* ===== LOGO ===== */
+    .header-logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+    }
+
+    .header-logo img {
+        width: 130px;
+        height: auto;
+    }
+
+    /* ===== CENTRALIZAÇÃO ===== */
+    .container-login {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ===== CARD ===== */
+    .card-login {
+        background: white;
+        width: 430px;
+        padding: 35px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== ÍCONES LARANJA ===== */
+    .input-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-icon .icon {
+        position: absolute;
+        left: 12px;
+        color: #ff8500;
+        font-size: 17px;
+    }
+
+    .input-icon input {
+        padding: 10px 12px 10px 40px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 14px;
+    }
+
+    /* ===== ÍCONE OLHO ===== */
+    .toggle-password {
+        position: absolute;
+        right: 12px;
+        cursor: pointer;
+        color: #ff8500;
+    }
+
+    /* ===== BOTÃO ENTRAR ===== */
+    .btn-entrar {
+        background-color: #174a8f !important;
+        border-color: #174a8f !important;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+
+    .btn-entrar:hover {
+        background-color: #0f396f !important;
+    }
+</style>

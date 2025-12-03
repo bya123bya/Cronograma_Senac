@@ -2,87 +2,75 @@
 @{
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
-
-{{-- 1. ESTRUTURA DA LOGO --}}
 <div class="header-logo">
     <img src="./img/senac.jpg" alt="Logo Senac" />
 </div>
-
-{{-- 2. CARD DE CADASTRO MODERNIZADO --}}
 <div class="container-cadastro">
     <div class="card-cadastro">
         <h2 class="titulo">Criar Conta</h2>
         
         <form method="POST" asp-action="CadastrarUsuario" asp-controller="Cadastro">
-            
-            {{-- Tipo de Usuário (Select) --}}
             <div class="mb-3">
-                <label class="form-label" for="TipoUsuarioId">Tipo de usuário</label>
-                <select class="form-select custom-input" id="TipoUsuarioId" name="TipoUsuarioId">
-                    <option selected>Selecione um tipo de usuário</option>
-                    @foreach (TipoUsuario usuario in ViewBag.ListaTiposUsuarios)
-                    {
-                        <option value="@usuario.Id">@usuario.Tipo</option>
-                    }
-                </select>
-            </div>
-
-            {{-- Nome do usuário (com ícone) --}}
-            <div class="mb-3">
-                <label class="form-label" for="Nome">Nome de usuário</label>
-                <div class="input-group">
-                    {{-- Ícone do usuário --}}
-                    <span class="input-group-text icon-addon"><i class="bi bi-person"></i></span>
-                    <input type="text" class="form-control custom-input" id="Nome" name="Nome" placeholder="Seu nome de usuário">
+                <label>Tipo de usuário</label>
+                <div class="input-icon">
+                    <span class="icon"><i class="fas fa-user-tag"></i></span>
+                    <select class="form-select" name="TipoUsuarioId" required />
+                        <option>Selecione um tipo de usuário</option>
+                        @foreach (TipoUsuario usuario in ViewBag.ListaTiposUsuarios)
+                        {
+                            <option value="@usuario.Id">@usuario.Tipo</option>
+                        } 
+                    </select>
                 </div>
             </div>
-
-            {{-- Email (com ícone) --}}
             <div class="mb-3">
-                <label class="form-label" for="Email">Email</label>
-                <div class="input-group">
-                    {{-- Ícone do email --}}
-                    <span class="input-group-text icon-addon"><i class="bi bi-envelope"></i></span>
-                    <input type="email" class="form-control custom-input" id="Email" name="Email" placeholder="seu.email@exemplo.com">
+                <label for="nome">Nome do usuário</label>
+                <div class="input-icon">
+                    <span class="icon"><i class="far fa-user"></i></span>
+                    <input type="text" name="Nome" placeholder="Seu nome de usuário" required />
                 </div>
             </div>
-
-            {{-- Senha (com ícone) --}}
             <div class="mb-3">
-                <label class="form-label" for="Senha">Senha</label>
-                <div class="input-group">
-                    {{-- Ícone da senha --}}
-                    <span class="input-group-text icon-addon"><i class="bi bi-lock"></i></span>
-                    <input type="password" class="form-control custom-input" id="Senha" name="Senha" placeholder="********">
-                    <span class="input-group-text toggle-password"><i class="bi bi-eye"></i></span>
+                <label for="Email">Email do usuário</label>
+                <div class="input-icon">
+                    <span class="icon"><i class="far fa-envelope"></i></span>
+                    <input type="text" name="Email" placeholder="seu.email@exemplo.com" required />
+ 
                 </div>
             </div>
-
-            {{-- Confirmar Senha (com ícone) --}}
-            <div class="mb-4">
-                <label class="form-label" for="ConfirmarSenha">Confirmar Senha</label>
-                <div class="input-group">
-                    {{-- Ícone de confirmação --}}
-                    <span class="input-group-text icon-addon"><i class="bi bi-lock"></i></span>
-                    <input type="password" class="form-control custom-input" id="ConfirmarSenha" name="ConfirmarSenha" placeholder="********" required />
-                    <span class="input-group-text toggle-password"><i class="bi bi-eye"></i></span>
+            <div class="mb-3">
+                <label for="Senha">Senha do usuário</label>
+                <div class="input-icon">
+                    <span class="icon"><i class="fas fa-key"></i></span>
+                    <input type="Password" name="Senha" placeholder="********" required />
+                    <span class="toggle-password" onclick="toggleSenha('senha')">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="ConfirmarSenha">Confirmar Senha</label>
+                <div class="input-icon">
+                    <span class="icon"><i class="fas fa-key"></i></span>
+                    <input type="Password" name="ConfirmarSenha" placeholder="********" required />
+                    <span class="toggle-password" onclick="toggleSenha('confirmar')">
+                        <i class="fas fa-eye"></i>
+                    </span>
                 </div>
             </div>
             
-            {{-- Botões --}}
             <div class="d-flex justify-content-end gap-3 mt-4">
-                <button type="button" class="btn btn-secondary btn-cancelar">Cancelar</button>
+                <a href="/login" class="btn btn-secondary btn-cancelar">Cancelar</a>
                 <button type="submit" class="btn btn-primary btn-criar">Criar Conta</button>
             </div>
         </form>
     </div>
 </div>
 
-{{-- 3. CSS PARA O ESTILO MODERNO --}}
 <style>
     /* Estilos Gerais */
     body {
-        background: #f0f3f6; /* Fundo mais claro, semelhante à imagem */
+        background: #dfe3e8; 
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
@@ -111,19 +99,18 @@
     /* Estilo do Card (Conforme a imagem) */
     .card-cadastro {
         background: white;
-        width: 440px; /* Largura ajustada */
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra mais suave */
-        margin-top: -60px; /* Ajuste fino para centralização vertical */
+        width: 430px;
+        padding: 35px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .titulo {
         text-align: center;
-        color: #174a8f;
-        font-size: 24px; /* Fonte levemente menor */
-        font-weight: 600;
-        margin-bottom: 30px;
+        color: #1a4d92;
+        font-size: 26px; 
+        font-weight: 700;
+        margin-bottom: 25px;
     }
     
     /* Estilo dos Inputs (Bootstrap Customizado) */
@@ -133,16 +120,18 @@
         margin-bottom: 4px;
     }
 
-    .custom-input {
-        border: 1px solid #dee2e6; /* Cor de borda clara */
-        border-radius: 8px; /* Cantos mais arredondados */
-        padding: 10px 15px;
-        transition: border-color 0.2s;
+    .form-group {
+        margin-bottom: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 
-    .custom-input:focus {
-        border-color: #174a8f;
-        box-shadow: 0 0 0 0.25rem rgba(23, 74, 143, 0.25);
+    .form-group label {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 5px;
+        font-weight: bold;
     }
 
     /* Input com Ícones (Input Group) */
@@ -151,18 +140,21 @@
         z-index: 1; /* Garante que o input fique na frente */
     }
 
-    .input-group .icon-addon, .input-group .toggle-password {
-        background-color: #f8f9fa; /* Fundo cinza claro para o addon */
-        border: 1px solid #dee2e6;
-        padding: 10px 15px;
-        border-radius: 8px 0 0 8px; /* Arredondamento apenas na esquerda */
-        color: #6c757d; /* Cor do ícone */
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        width: 100%;
+        font-size: 14px;
     }
-    .input-group .toggle-password {
-        cursor: pointer;
-        border-radius: 0 8px 8px 0; /* Arredondamento apenas na direita */
-        border-left: none;
-        background-color: transparent;
+
+    .link-esqueci {
+        font-size: 12px;
+        color: #174a8f;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 20px;
     }
 
     .input-group .form-control {
@@ -175,42 +167,63 @@
     
     /* Botões */
     .btn-cancelar {
-        background-color: #e9ecef !important;
+        background-color: #f1f3f5 !important;
         color: #495057 !important;
         border: none !important;
-        padding: 10px 25px;
+        padding: 10px 40px;
         border-radius: 8px;
+        font-weight: 600;
     }
     
     .btn-criar {
         /* Cor laranja do Senac */
-        background-color: #ff8500 !important;
-        border-color: #ff8500 !important;
-        padding: 10px 25px;
+        background-color: #ff8800 !important;
+        border: none !important;
+        padding: 10px 38px;
         border-radius: 8px;
+        font-weight: 600;
     }
 
     .btn-criar:hover {
         background-color: #e57700 !important;
         border-color: #e57700 !important;
     }
-</style>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    .input-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
     }
-    <script>
-        // Script para a funcionalidade de mostrar/ocultar senha (opcional, mas recomendado para o UX)
-        document.querySelectorAll('.toggle-password').forEach(toggle => {
-            toggle.addEventListener('click', function () {
-                const input = this.parentNode.querySelector('input[type="password"], input[type="text"]');
-                const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
-                input.setAttribute('type', type);
-                // Alternar o ícone visual (se estiver usando Bootstrap Icons)
-                this.querySelector('i').classList.toggle('bi-eye');
-                this.querySelector('i').classList.toggle('bi-eye-slash');
-            });
-        });
-    </script>
+
+    .input-icon .icon {
+        position: absolute;
+        left: 12px;
+        color: #ff8500 !important;
+        font-size: 16px;
+    }
+
+    .input-icon input,
+    .input-icon select {
+        width: 100%;
+        padding: 10px 14px 10px 40px;
+        /* espaço para o ícone */
+        border: 1px solid #bfc5cc;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    /* Ícone do olho para mostrar/ocultar senha */
+    .toggle-password {
+        position: absolute;
+        right: 12px;
+        cursor: pointer;
+        color: #ff8500 !important;
+    }
+
+    .toggle-password:hover {
+        color: #333;
+    }
+    .mb-3 {
+    margin-bottom: 14px !important;
 }
+</style>
