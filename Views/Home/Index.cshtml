@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Main Content -->
-        <main class="col-md-10 ml-sm-auto px-4">
+        <main>
             <!-- Breadcrumb -->
             <nav aria-label="breadcrumb" class="mt-3">
                 <ol class="breadcrumb">
@@ -41,13 +41,38 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @if (ViewBag.ListaUcs != null && ViewBag.ListaUcs.Count > 0)
+                        {
+                            @foreach (var uc in ViewBag.ListaUcs)
+                            {
+                                <tr class="group-row">
+                                    <td colspan="8">
+                                        <span class="badge bg-primary rounded-pill px-3 py-2">@uc.Nome</span>
+                                    </td>
+                                </tr>
+
+                                @foreach(var turmas in uc.TurmaUcs)
+                                {
+                                    <tr>
+                                        <td>@turmas.Turma?.Nome</td>
+                                        <td>1</td>
+                                        <td>18</td>
+                                        <td>Prof. Ana Silva</td>
+                                        <td>20/05/2024</td>
+                                        <td>3:30</td>
+                                        <td><i class="fa-regular fa-comment-dots"></i></td>
+                                        <td><input type="checkbox" /></td>
+                                    </tr>
+                                }
+                            }
+                        }
                         <!-- Grupo 1 -->
                         <tr class="group-row">
                             <td colspan="8">
                                 <span class="badge bg-primary rounded-pill px-3 py-2">Transforme-se</span>
                             </td>
                         </tr>
-                        <td>Revisão do Capítulo 1</td>
+                        <td>Informática Básica</td>
                         <td>1</td>
                         <td>18</td>
                         <td>Prof. Ana Silva</td>
@@ -56,21 +81,6 @@
                         <td><i class="fa-regular fa-comment-dots"></i></td>
                         <td><input type="checkbox" /></td>
                         </tr>
-                        <tr>
-                            <td>Planejar Aula Interativa</td>
-                            <td>6</td>
-                            <td>18</td>
-                            <td>Prof. João Mendes</td>
-                            <td>25/05/2024</td>
-                            <td>3:30</td>
-                            <td><i class="fa-regular fa-comment-dots"></i></td>
-                            <td><input type="checkbox" /></td>
-                        </tr>
-                        <tr class="add-uc-row">
-                            <td colspan="8">
-                                <i class="bi bi-plus-lg me-2"></i>Adicionar UC
-                            </td>
-                        </tr>
 
                         <!-- Grupo 2 -->
                         <tr class="group-row">
@@ -78,42 +88,47 @@
                                 <span class="badge bg-primary rounded-pill px-3 py-2">Curso livre</span>
                             </td>
                         </tr>
-                            <td>Avaliação da Unidade 2</td>
-                            <td>9</td>
-                            <td>18</td>
-                            <td>Prof. Ana Silva</td>
-                            <td>30/05/2024</td>
-                            <td>3:30</td>
-                            <td><i class="fa-regular fa-comment-dots"></i></td>
-                            <td><input type="checkbox" /></td>
+                        <td>Avaliação da Unidade 2</td>
+                        <td>9</td>
+                        <td>18</td>
+                        <td>Prof. Ana Silva</td>
+                        <td>30/05/2024</td>
+                        <td>3:30</td>
+                        <td><i class="fa-regular fa-comment-dots"></i></td>
+                        <td><input type="checkbox" /></td>
                         </tr>
-                        <tr>
-                            <td>Reunião da Equipe Pedagógica</td>
-                            <td>4</td>
-                            <td>18</td>
-                            <td>Coord. Maria L.</td>
-                            <td>02/06/2024</td>
-                            <td>3:30</td>
-                            <td><i class="fa-regular fa-comment-dots"></i></td>
-                            <td><input type="checkbox" /></td>
-                        </tr>
-                        <tr>
-                            <td>Preparar Materiais Didáticos</td>
-                            <td>2</td>
-                            <td>18</td>
-                            <td>Prof. João Mendes</td>
-                            <td>05/06/2024</td>
-                            <td>3:30</td>
-                            <td><i class="fa-regular fa-comment-dots"></i></td>
-                            <td><input type="checkbox" /></td>
-                        </tr>
-                        <tr class="add-uc-row">
+                        @* <tr class="add-uc-row">
                             <td colspan="8">
-                                <i class="bi bi-plus-lg me-2"></i>Adicionar UC
+                                <button type="button" class="btn w-100 text-start py-2" data-bs-toggle="modal"
+                                    data-bs-target="#modalAdicionarUC"
+                                    style="background-color: transparent; border: none; color: #0d6efd; font-weight: 500;">
+                                    <i class="bi bi-plus-lg me-2"></i>+ Adicionar UC
+                                </button>
                             </td>
-                        </tr>
+                        </tr> *@
 
                     </tbody>
+                    <div class="modal fade" id="modalAdicionarUC" tabindex="-1" aria-labelledby="modalAdicionarUCTitle"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalAdicionarUCTitle">Adicionar UC</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <!-- Aqui você coloca os campos de adicionar UC -->
+                                    Conteúdo da UC aqui...
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary">Salvar</button>
+                                </div>
                 </table>
             </div>
         </main>

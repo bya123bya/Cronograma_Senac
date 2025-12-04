@@ -1,88 +1,151 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - CronogramaSenac</title>
-    <script type="importmap"></script>
+    <!-- Substitua pelo seu caminho correto para o Bootstrap CSS -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/all.css" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/solid.css" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/regular.css" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/fontawesome.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/CronogramaSenac.styles.css" asp-append-version="true" />
+    <!-- Adicione a biblioteca de ícones Font Awesome (necessário para os ícones laterais) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- CSS Customizado para o Layout Fixo -->
+    <style>
+        /* Estrutura da barra lateral fixa e conteúdo principal */
+        .sidebar {
+            position: fixed;
+            top: 0; /* Começa do topo */
+            bottom: 0;
+            left: 0;
+            z-index: 100; /* Acima de outros elementos */
+            padding: 0;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+            background-color: #f8f9fa; /* Cor de fundo da imagem */
+            width: 250px; /* Largura para desktop */
+        }
+        
+        .sidebar .nav-link {
+            font-weight: 500;
+            color: #333;
+            padding: 0.75rem 1rem;
+        }
+
+        .sidebar .nav-link.active,
+        .sidebar .nav-link:hover {
+            color: #007bff; /* Azul Senac/padrão Bootstrap */
+            background-color: #e9ecef;
+            border-left: 3px solid #007bff; /* Linha azul lateral */
+        }
+
+        /* Ajuste para o conteúdo principal para não ser coberto pela sidebar */
+        main {
+            padding-top: 56px; /* Para acomodar a Navbar fixa */
+            margin-left: 250px; /* Espaço para a Sidebar */
+            width: calc(100% - 250px);
+        }
+
+        /* Navbar superior - estilo simples para corresponder à imagem */
+        .navbar-top {
+            z-index: 1030;
+            background-color: #fff;
+            border-bottom: 1px solid #dee2e6;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+        }
+        
+        /* Estilo da Logo Senac no cabeçalho (posição da segunda imagem) */
+        .sidebar-logo-container {
+            padding: 1.5rem 1rem 1rem 1rem;
+            text-align: center;
+        }
+
+        .sidebar-logo {
+            width: 100%; /* Ocupa a largura total da coluna do logo */
+            height: auto;
+            max-width: 150px; /* Ajuste o tamanho máximo da logo */
+        }
+    </style>
 </head>
+<body>
 
-<body style="height: 100vh;">
-    <section class="row justify-content-start align-item-start cols h-100">
-
-        @* Menu a esquerda *@
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar col-2 px-0">
-            <div class="sidebar-sticky">
-                <button class="btn btn-primary w-100 mb-3">+ Criar</button>
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active"><i class="fa-regular fa-house"></i> Início </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active"><i class="fa-regular fa-user"></i> Coordenadores </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active"> Cursos </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active"> Turmas </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Mais</a>
-                    </li>
+    <!-- NAV BAR SUPERIOR (Topo) -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-top">
+        <div class="container-fluid">
+            <!-- Título do Cronograma Senac -->
+            <a class="navbar-brand ms-auto me-auto" href="#">CronogramaSenac</a>
+            
+            <!-- Links do Menu Principal (Home, Privacy) -->
+            <div class="d-flex me-4">
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item me-3"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="#">Privacy</a></li>
                 </ul>
             </div>
-        </nav>
+            
+            <!-- Ícone do Usuário/Perfil (Direita) -->
+            <div class="d-flex">
+                <i class="fas fa-user-circle fa-2x text-secondary me-2"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- BARRA LATERAL (SIDEBAR) -->
+    <nav id="sidebarMenu" class="sidebar">
+        <div class="sidebar-sticky">
+            <!-- Logo (Como na sua segunda imagem) -->
+            <div class="sidebar-logo-container">
+                <!-- Usando o caminho da sua imagem fornecida: ./img/senac.jpg -->
+                <img src="./img/senac.jpg" alt="Logo Senac" class="sidebar-logo" />
+            </div>
 
-        <section class="col align-items-start justify-content-start p-0">
-            <header class>
-                <nav
-                    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 px-0">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CronogramaSenac</a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                            <ul class="navbar-nav flex-grow-1">
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                        asp-action="Index">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home"
-                                        asp-action="Privacy">Privacy</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+            <ul class="nav flex-column mt-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-home me-2"></i>
+                        Início
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-users me-2"></i>
+                        Coordenadores
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-book me-2"></i>
+                        Cursos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-calendar-alt me-2"></i>
+                        Turmas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        <i class="fas fa-graduation-cap me-2"></i>
+                        Cursos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-ellipsis-h me-2"></i>
+                        Mais
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </section>
-
-    </section>
-    </footer>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main role="main">
+        <div class="p-4">
+            @RenderBody()
+        </div>
+    </main>
+    
+    <!-- Scripts (Seu código JavaScript e jQuery) -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/lib/fontawesome/js/all.js"></script>
-    <script src="~/lib/fontawesome/js/fontawesome.js"></script>
-    <script src="~/lib/fontawesome/js/regular.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
-
 </html>
