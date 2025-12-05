@@ -42,7 +42,7 @@
                 <label for="Senha">Senha do usuário</label>
                 <div class="input-icon">
                     <span class="icon"><i class="fas fa-key"></i></span>
-                    <input type="Password" name="Senha" placeholder="********" required />
+                    <input type="Password" name="Senha" placeholder="********" required id="senha"/>
                     <span class="toggle-password" onclick="toggleSenha('senha')">
                         <i class="fas fa-eye"></i>
                     </span>
@@ -52,7 +52,7 @@
                 <label for="ConfirmarSenha">Confirmar Senha</label>
                 <div class="input-icon">
                     <span class="icon"><i class="fas fa-key"></i></span>
-                    <input type="Password" name="ConfirmarSenha" placeholder="********" required />
+                    <input type="Password" name="ConfirmarSenha" placeholder="********" required id="confirmar"/>
                     <span class="toggle-password" onclick="toggleSenha('confirmar')">
                         <i class="fas fa-eye"></i>
                     </span>
@@ -227,3 +227,17 @@
     margin-bottom: 14px !important;
 }
 </style>
+<script>
+    function toggleSenha(idCampo) {
+        const campo = document.getElementById(idCampo);
+        const icon = campo.parentElement.querySelector(".toggle-password i");
+ 
+        if (campo.type === "password") {
+            campo.type = "text";
+            icon.classList.replace("fa-eye", "fa-eye-slash");
+        } else {
+            campo.type = "password";
+            icon.classList.replace("fa-eye-slash", "fa-eye");
+        }
+    }
+</script>
