@@ -137,10 +137,7 @@ C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\scopedcss\bundle\CronogramaSenac.styles.css
-C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\scopedcss\projectbundle\CronogramaSenac.bundle.scp.css
-C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\0asx9fm4oo-ip4nisn8p9.gz
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\docmmee6v8-61n19gt1b8.gz
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\lvim5f6qd6-xtxxf3hu2r.gz
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\dfgfc3kk7x-bqjiyaj88i.gz
@@ -5858,8 +5855,6 @@ C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\qj2n8kte0p-muycvpuwrr.gz
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\fijk8242uw-87fc7y1x7t.gz
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\jkrfyxuk02-mlv21k5csn.gz
-C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\l6htdpjt29-35gr8bma59.gz
-C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\tiv15bcan2-35gr8bma59.gz
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -5875,3 +5870,4 @@ C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\CronogramaSenac.pdb
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\CronogramaSenac.genruntimeconfig.cache
 C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\ref\CronogramaSenac.dll
+C:\Users\beatryz.bllabbe\OneDrive - SENAC - SP\Área de Trabalho\CronogramaSenac\obj\Debug\net9.0\compressed\0asx9fm4oo-wj7a5g7zi6.gz

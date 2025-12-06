@@ -1,6 +1,7 @@
 @import "bootstrap-icons/font/bootstrap-icons";
 
-*{
+/* === Estilos Globais e Resets (Geral) === */
+* {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -8,6 +9,8 @@
 
 html {
   font-size: 14px;
+  position: relative;
+  min-height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -16,61 +19,201 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+/* Estilos de Form Floating (Seus estilos originais) */
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
   color: var(--bs-secondary-color);
   text-align: end;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
-.add-uc-row td {
 
-  padding: 18px;
+/* === Estilos do Layout (Movidos do _Layout.cshtml) === */
 
-  background: #f7f9ff;
-
-  color: #0d6efd;
-
-  font-weight: 600;
-
-  cursor: pointer;
-
-  border-left: 3px solid transparent;
-
-  transition: 0.2s ease;
-
+/* Estrutura da barra lateral fixa e conteúdo principal */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1020;
+  padding: 0;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  width: 250px;
 }
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+  padding: 0.75rem 1rem;
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+  color: #007bff;
+  background-color: #e9ecef;
+  border-left: 3px solid #007bff;
+}
+
+/* Ajuste para o conteúdo principal para não ser coberto pela sidebar */
+main {
+  padding-top: 60px; /* Altura da Navbar Superior */
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+/* Navbar superior */
+.navbar-top {
+  z-index: 1030;
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  /* Ajuste crucial para começar após a sidebar */
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  height: 60px; /* Altura fixa para a Navbar */
+}
+/* Estilo da barra de pesquisa na Navbar */
+.search-bar {
+  max-width: 400px;
+}
+/* Estilo da imagem de perfil */
+.profile-img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+/* Estilo da Logo Senac */
+.sidebar-logo-container {
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  text-align: center;
+}
+
+.sidebar-logo {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+}
+
+/* === Estilos da Tabela (Movidos do Index.cshtml) === */
+
+/* Estilo do botão "+ Adicionar UC" */
+.add-uc-button {
+  background-color: transparent !important;
+  border: none !important;
+  color: #0d6efd !important;
+  font-weight: 500;
+}
+
+.add-uc-row td {
+  padding: 18px;
+  background: #f7f9ff;
+  color: #0d6efd;
+  font-weight: 600;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: 0.2s ease;
+}
+
 .group-row td {
   background: #ffffff !important;
   border-top: 30px solid #f5f6fa !important;
   border-bottom: 10px solid #f5f6fa !important;
 }
+
 .add-uc-row:hover td {
-
   background: #eef3ff;
-
   border-left: 3px solid #0d6efd;
-
 }
+
 .table i.bi-clock {
   color: #f8b500;
   font-size: 18px;
 }
+
 table.table-hover tbody tr td {
   padding-top: 18px !important;
   padding-bottom: 18px !important;
   vertical-align: middle;
 }
+
 .table-hover tbody tr:hover td {
   background-color: #eef4ff !important;
+}
+
+/* Estilos para Input com Ícone no Modal */
+.input-icon {
+  position: relative;
+}
+
+.input-icon .icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  color: #adb5bd;
+}
+
+.input-icon input.form-control {
+  padding-left: 35px;
+}
+/* === Estilos da Div de Perfil (Navbar Superior) === */
+
+.user-icon {
+    /* Estilo base para os ícones ao lado da div de perfil */
+    color: #6c757d !important; /* Cor cinza padrão */
+    transition: 0.2s ease;
+}
+
+.user-icon:hover {
+    color: #0d6efd !important; /* Cor ao passar o mouse */
+}
+
+.user-profile {
+    /* Contêiner da foto e nome */
+    padding: 0.3rem 0.5rem;
+    border-radius: 25px; /* Bordas arredondadas para dar o efeito de destaque */
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.user-profile:hover {
+    background-color: #f8f9fa; /* Cor de fundo leve ao passar o mouse */
+}
+
+.user-profile .profile-img {
+    /* Garante que a imagem esteja centralizada e redonda */
+    width: 38px;
+    height: 38px;
+    object-fit: cover;
+}
+
+.user-profile .user-name {
+    /* Nome do usuário */
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.2; /* Ajuste a altura da linha para o nome */
+    margin: 0;
+}
+
+.user-profile .user-title {
+    /* Título ou cargo (usando <small>) */
+    font-size: 0.75rem;
+    color: #6c757d;
+    line-height: 1.2; /* Ajuste a altura da linha para o cargo */
+    margin: 0;
 }
