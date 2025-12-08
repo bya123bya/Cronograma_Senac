@@ -21,9 +21,9 @@ public partial class Turma
 
     public DateOnly? DataFim { get; set; }
 
-    public virtual ICollection<DiasTurma> DiasTurmas { get; set; } = new List<DiasTurma>();
+    public string? Nome { get; set; }
 
-    public virtual ICollection<Falta> Falta { get; set; } = new List<Falta>();
+    public virtual ICollection<DiasTurma> DiasTurmas { get; set; } = new List<DiasTurma>();
 
     public virtual ICollection<TurmaUc> TurmaUcs { get; set; } = new List<TurmaUc>();
 

@@ -8,41 +8,41 @@
 <div class="container-cadastro">
     <div class="card-cadastro">
         <h2 class="titulo">Criar Conta</h2>
-        @*Formulário de cadastro de Usuario*@
+        
         <form method="POST" asp-action="CadastrarUsuario" asp-controller="Cadastro">
             <div class="mb-3">
                 <label>Tipo de usuário</label>
                 <div class="input-icon">
                     <span class="icon"><i class="fas fa-user-tag"></i></span>
-                    <select class="form-select" name="TipoUsuarioId">
+                    <select class="form-select" name="TipoUsuarioId" required />
                         <option>Selecione um tipo de usuário</option>
                         @foreach (TipoUsuario usuario in ViewBag.ListaTiposUsuarios)
                         {
                             <option value="@usuario.Id">@usuario.Tipo</option>
-                        }
+                        } 
                     </select>
                 </div>
             </div>
             <div class="mb-3">
-                    <span class="icon"><i class="far fa-user"></i></span>
                 <label for="nome">Nome do usuário</label>
                 <div class="input-icon">
                     <span class="icon"><i class="far fa-user"></i></span>
-                    <input type="text" name="Nome">
+                    <input type="text" name="Nome" placeholder="Seu nome de usuário" required />
                 </div>
             </div>
             <div class="mb-3">
                 <label for="Email">Email do usuário</label>
                 <div class="input-icon">
-                    <span class="icon"><i class="fas fa-user"></i></span>
-                    <input type="text" name="Email">
+                    <span class="icon"><i class="far fa-envelope"></i></span>
+                    <input type="text" name="Email" placeholder="seu.email@exemplo.com" required />
+ 
                 </div>
             </div>
             <div class="mb-3">
                 <label for="Senha">Senha do usuário</label>
                 <div class="input-icon">
                     <span class="icon"><i class="fas fa-key"></i></span>
-                    <input type="Password" name="Senha">
+                    <input type="Password" name="Senha" placeholder="********" required id="senha"/>
                     <span class="toggle-password" onclick="toggleSenha('senha')">
                         <i class="fas fa-eye"></i>
                     </span>
@@ -52,48 +52,51 @@
                 <label for="ConfirmarSenha">Confirmar Senha</label>
                 <div class="input-icon">
                     <span class="icon"><i class="fas fa-key"></i></span>
-                    <input type="Password" name="ConfirmarSenha" required />
+                    <input type="Password" name="ConfirmarSenha" placeholder="********" required id="confirmar"/>
                     <span class="toggle-password" onclick="toggleSenha('confirmar')">
                         <i class="fas fa-eye"></i>
                     </span>
                 </div>
             </div>
-            <div class="botoes">
-                <button type="button" class="btn-cancelar">Cancelar</button>
-                <button type="submit" class="btn-criar">Criar Conta</button>
+            
+            <div class="d-flex justify-content-end gap-3 mt-4">
+                <a href="/login" class="btn btn-secondary btn-cancelar">Cancelar</a>
+                <button type="submit" class="btn btn-primary btn-criar">Criar Conta</button>
             </div>
         </form>
     </div>
 </div>
+
 <style>
+    /* Estilos Gerais */
+    body {
+        background: #dfe3e8; 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Posicionamento da Logo */
     .header-logo {
         position: absolute;
         top: 20px;
         left: 20px;
         z-index: 10;
-        /* Garante que o logo fique acima de outros elementos */
     }
-
     .header-logo img {
         width: 130px;
-        /* Define o tamanho da imagem menor */
         height: auto;
     }
 
-    body {
-        background: #dcdfe4;
-        font-family: Arial, sans-serif;
-    }
-
+    /* Centralização do Card */
     .container-cadastro {
         width: 100%;
-        min-height: calc(100vh - 40px);
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding-top: 40px;
+        /* Alinhamento para que o card fique no meio da tela */
     }
 
+    /* Estilo do Card (Conforme a imagem) */
     .card-cadastro {
         background: white;
         width: 430px;
@@ -104,9 +107,17 @@
 
     .titulo {
         text-align: center;
-        color: #174a8f;
-        font-size: 26px;
+        color: #1a4d92;
+        font-size: 26px; 
+        font-weight: 700;
         margin-bottom: 25px;
+    }
+    
+    /* Estilo dos Inputs (Bootstrap Customizado) */
+    .form-label {
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 4px;
     }
 
     .form-group {
@@ -123,11 +134,10 @@
         font-weight: bold;
     }
 
-    .form-input {
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        width: 100%;
+    /* Input com Ícones (Input Group) */
+    .input-group .form-control {
+        border-left: none; /* Remove a borda esquerda para integrar com o ícone */
+        z-index: 1; /* Garante que o input fique na frente */
     }
 
     .form-group input,
@@ -147,30 +157,36 @@
         margin-bottom: 20px;
     }
 
-    .botoes {
-        display: flex;
-        justify-content: space-between;
+    .input-group .form-control {
+        border-radius: 0 8px 8px 0; /* Arredondamento na direita do input */
     }
 
+    .input-group:focus-within .icon-addon {
+        border-color: #174a8f;
+    }
+    
+    /* Botões */
     .btn-cancelar {
-        background: #f0f0f0;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
+        background-color: #f1f3f5 !important;
+        color: #495057 !important;
+        border: none !important;
+        padding: 10px 40px;
+        border-radius: 8px;
+        font-weight: 600;
     }
-
+    
     .btn-criar {
-        background: #ff8500;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
+        /* Cor laranja do Senac */
+        background-color: #ff8800 !important;
+        border: none !important;
+        padding: 10px 38px;
+        border-radius: 8px;
+        font-weight: 600;
     }
 
     .btn-criar:hover {
-        background: #e57700;
+        background-color: #e57700 !important;
+        border-color: #e57700 !important;
     }
 
     .input-icon {
@@ -182,17 +198,17 @@
     .input-icon .icon {
         position: absolute;
         left: 12px;
-        color: #777;
+        color: #ff8500 !important;
         font-size: 16px;
     }
 
     .input-icon input,
     .input-icon select {
         width: 100%;
-        padding: 10px 12px 10px 38px;
+        padding: 10px 14px 10px 40px;
         /* espaço para o ícone */
-        border: 1px solid #ccc;
-        border-radius: 6px;
+        border: 1px solid #bfc5cc;
+        border-radius: 8px;
         font-size: 14px;
     }
 
@@ -201,10 +217,27 @@
         position: absolute;
         right: 12px;
         cursor: pointer;
-        color: #777;
+        color: #ff8500 !important;
     }
 
     .toggle-password:hover {
         color: #333;
     }
+    .mb-3 {
+    margin-bottom: 14px !important;
+}
 </style>
+<script>
+    function toggleSenha(idCampo) {
+        const campo = document.getElementById(idCampo);
+        const icon = campo.parentElement.querySelector(".toggle-password i");
+ 
+        if (campo.type === "password") {
+            campo.type = "text";
+            icon.classList.replace("fa-eye", "fa-eye-slash");
+        } else {
+            campo.type = "password";
+            icon.classList.replace("fa-eye-slash", "fa-eye");
+        }
+    }
+</script>

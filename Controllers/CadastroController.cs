@@ -24,7 +24,7 @@ namespace CronogramaSenac.Controllers
             return View();
         }
 
-        [HttpPost("cadastrar")]
+        [HttpPost]
         public IActionResult CadastrarUsuario(Usuario usuario)
         {
             //Armazenar o usuario 

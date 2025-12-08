@@ -15,10 +15,7 @@ public partial class Usuario
 
     public int? TipoUsuarioId { get; set; }
 
-    public virtual ICollection<Falta> Falta { get; set; } = new List<Falta>();
-
     public virtual TipoUsuario? TipoUsuario { get; set; }
 
     public virtual ICollection<UsuarioTurma> UsuarioTurmas { get; set; } = new List<UsuarioTurma>();
 }
-
