@@ -13,7 +13,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var listaUcs = context.Ucs.Include(x => x.TurmaUcs).ThenInclude(x => x.Turma).ThenInclude(x => x.UsuarioTurmas).ThenInclude(x => x.Usuario).Where(uc => uc.TurmaUcs.Any(tuc => tuc.Turma.UsuarioTurmas.Any(ut => ut.Usuario.TipoUsuarioId == 4))).ToList();
+        // var listaUcs = context.Ucs.Include(x => x.TurmaUcs).ThenInclude(x => x.Turma).ThenInclude(x => x.UsuarioTurmas).ThenInclude(x => x.Usuario).Where(uc => uc.TurmaUcs.Any(tuc => tuc.Turma.UsuarioTurmas.Any(ut => ut.Usuario.TipoUsuarioId == 4))).ToList();
+
+        var listaUcs = context.Turmas.Include(x => x.UsuarioTurmas).ThenInclude(x => x.Usuario).ThenInclude(x => x.TipoUsuario).Include(x => x.TurmaUcs).ThenInclude(x => x.Uc).Where(uc => uc.TurmaUcs.Any(tuc => tuc.Turma.UsuarioTurmas.Any(ut => ut.Usuario.TipoUsuarioId == 4))).ToList();
 
         ViewBag.ListaUcs = listaUcs;
         

@@ -81,11 +81,11 @@ public partial class Senac_cronogramaContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Turma>(entity =>
+        modelBuilder.Entity<Uc>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Turma__3213E83FB0119644");
+            entity.HasKey(e => e.Id).HasName("PK__Uc__3213E83FB0119644");
 
-            entity.ToTable("Turma");
+            entity.ToTable("Uc");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.DataAula).HasColumnName("dataAula");
@@ -123,11 +123,11 @@ public partial class Senac_cronogramaContext : DbContext
                 .HasConstraintName("FK__TurmaUC__UC_id__49C3F6B7");
         });
 
-        modelBuilder.Entity<Uc>(entity =>
+        modelBuilder.Entity<Turma>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UC__3213E83F36A7A672");
+            entity.HasKey(e => e.Id).HasName("PK__Turma__3213E83F36A7A672");
 
-            entity.ToTable("UC");
+            entity.ToTable("Turma");
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Descrição).HasColumnType("text");

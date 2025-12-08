@@ -3,7 +3,7 @@
 }
 <div class="container-fluid">
     <div class="row">
-        <main>
+        <div>
             <nav aria-label="breadcrumb" class="mt-3">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">#Senac Itaquera</a></li>
@@ -36,40 +36,40 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <h1>asdasd @ViewBag.ListaUcs.Count</h1>
+                        <h1>Turmas @ViewBag.ListaUcs.Count</h1>
                         @if (ViewBag.ListaUcs != null && ViewBag.ListaUcs.Count > 0)
                         {
-                            @foreach (var uc in ViewBag.ListaUcs)
+                            @foreach (var tm in ViewBag.ListaUcs)
                             {
                                 <tr class="group-row">
                                     <td colspan="8">
-                                        <span class="badge bg-primary rounded-pill px-3 py-2">@uc?.Nome</span>
+                                        <span class="badge bg-primary rounded-pill px-3 py-2">@tm?.Nome</span>
                                     </td>
                                 </tr>
 
-                                @if (uc?.TurmaUcs != null && uc?.TurmaUcs.Count > 0)
+                                @if (tm?.TurmaUcs != null && tm?.TurmaUcs.Count > 0)
                                 {
-                                    @foreach (var turmas in uc.TurmaUcs)
+                                    @foreach (var ucs in tm.TurmaUcs)
                                     {
                                         <tr>
-                                            <td>@turmas.Turma?.Nome</td>
+                                            <td>@ucs.Uc?.Nome</td>
                                             <td>
                                                 <select class="form-select" aria-label="Default select example">
-                                                    @for (int i = 0; i <= @turmas.Turma?.QtsAulas; i++)
+                                                    @for (int i = 0; i <= @ucs.Uc?.QtsAulas; i++)
                                                     {
                                                         <option value="@i">Aula - @i</option>
                                                     }
                                                 </select>
                                             </td>
-                                            <td>@turmas.Turma?.QtsAulas</td>
-                                            <td>@turmas.Turma?.UsuarioTurmas?[0].Usuario?.Nome</td>
-                                            <td>20/05/2024</td>
-                                            <td>@turmas.CargaHoraria</td>
+                                            <td>@ucs.Uc?.QtsAulas</td>
+                                            <td>@ucs.Turma?.UsuarioTurmas?[0].Usuario?.Nome</td>
+                                            <td>@ucs.Uc?.DataInicio</td>
+                                            <td>@ucs?.CargaHoraria</td>
                                             <td><input type="checkbox" /></td>
                                         </tr>
                                     }
                                 }
-                            }
+                            } 
                         }
                         <tr class="add-uc-row">
                             <td colspan="8">
@@ -135,6 +135,6 @@
 
                 </table>
             </div>
-        </main>
+        </div>
     </div>
 </div>
