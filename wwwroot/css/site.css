@@ -217,3 +217,8 @@ table.table-hover tbody tr td {
     line-height: 1.2; /* Ajuste a altura da linha para o cargo */
     margin: 0;
 }
+
+.col-center {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
