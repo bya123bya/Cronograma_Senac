@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
+
 <body>
 
     <nav id="sidebarMenu" class="sidebar">
@@ -21,7 +23,7 @@
                     <i class="fas fa-plus me-2"></i> Criar
                 </button>
             </div>
-            
+
             <ul class="nav flex-column mt-3">
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-home me-2"></i> Início</a>
@@ -44,22 +46,25 @@
             </ul>
         </div>
     </nav>
-    
+
     <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-top">
-        <div class="container-fluid">
-            
-            <div class="d-flex align-items-center w-100">
-                <a class="navbar-brand me-4" href="#">CronogramaSenac</a> 
-                
-                <div class="input-group search-bar">
-                    <input type="text" class="form-control" placeholder="Pesquisar Ctrl K" aria-label="Pesquisar">
-                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+        <div class="container-fluid d-flex align-items-center">
+
+            <!-- Nome do sistema (esquerda) -->
+            <a class="navbar-brand me-4" href="#">CronogramaSenac</a>
+
+            <!-- Barra de Pesquisa (centro) -->
+            <div class="nav-search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Pesquisar Ctrl K">
                 </div>
             </div>
 
-            <div class="d-flex ms-auto align-items-center">
-                <i class="far fa-bell fa-lg text-secondary mx-3 d-none d-md-block user-icon" style="cursor: pointer;"></i>
-                <i class="fas fa-cog fa-lg text-secondary mx-3 d-none d-md-block user-icon" style="cursor: pointer;"></i>
+            <!-- Ícones e Perfil (direita) -->
+            <div class="d-flex align-items-center ms-auto">
+                <i class="far fa-bell fa-lg text-secondary mx-3 user-icon"></i>
+                <i class="fas fa-cog fa-lg text-secondary mx-3 user-icon"></i>
 
                 <div class="d-flex align-items-center user-profile ms-2">
                     <div class="me-2 text-end d-none d-lg-block">
@@ -69,16 +74,19 @@
                     <img src="./img/perfil.jpg" alt="Perfil" class="rounded-circle profile-img" />
                 </div>
             </div>
+
         </div>
     </nav>
-    
+
+
     <main role="main">
-        <div class="p-4"> 
+        <div class="p-4">
             @RenderBody()
         </div>
     </main>
-    
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

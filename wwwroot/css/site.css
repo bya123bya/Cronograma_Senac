@@ -217,3 +217,45 @@ table.table-hover tbody tr td {
     line-height: 1.2; /* Ajuste a altura da linha para o cargo */
     margin: 0;
 }
+
+.col-center {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+/* === Barra de Pesquisa estilo SENAC === */
+.nav-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 30px;
+  padding: 6px 14px;
+  width: 380px;
+  height: 38px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.search-box i {
+  font-size: 17px;
+  color: #9b9b9b;
+  margin-right: 10px;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #bfbfbf;
+}

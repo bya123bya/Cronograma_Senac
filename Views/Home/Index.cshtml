@@ -28,11 +28,11 @@
                         <tr>
                             <th>Nome</th>
                             <th>Aulas</th>
-                            <th>Total de Aulas</th>
+                            <th class="col-center">Total de Aulas</th>
                             <th>Docente</th>
                             <th>Data</th>
                             <th>CH</th>
-                            <th>Lançamento SS</th>
+                            <th class="col-center">Lançamento SS</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -60,12 +60,16 @@
                                                         <option value="@i">Aula - @i</option>
                                                     }
                                                 </select>
-                                            </td>
-                                            <td>@ucs.Uc?.QtsAulas</td>
+                                            <td class="col-center">@ucs.Uc?.QtsAulas</td>
+
                                             <td>@ucs.Turma?.UsuarioTurmas?[0].Usuario?.Nome</td>
                                             <td>@ucs.Uc?.DataInicio</td>
                                             <td>@ucs?.CargaHoraria</td>
-                                            <td><input type="checkbox" /></td>
+
+                                            <!-- AQUI centraliza o checkbox -->
+                                            <td class="col-center">
+                                                <input type="checkbox" />
+                                            </td>
                                         </tr>
                                     }
                                 }
