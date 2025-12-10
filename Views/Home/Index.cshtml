@@ -73,66 +73,147 @@
                                         </tr>
                                     }
                                 }
-                            } 
+                            }
                         }
                         <tr class="add-uc-row">
                             <td colspan="8">
-                                <button type="button" class="btn w-100 text-start py-2 add-uc-button" data-bs-toggle="modal"
-                                    data-bs-target="#modalAdicionarUC">
+                                <button type="button" class="btn w-100 text-start py-2 add-uc-button"
+                                    data-bs-toggle="modal" data-bs-target="#modalAdicionarUC">
                                     <i class="bi bi-plus-lg me-2"></i>+ Adicionar UC
                                 </button>
                             </td>
                         </tr>
 
                     </tbody>
+                    <!-- MODAL ADICIONAR UC -->
                     <div class="modal fade" id="modalAdicionarUC" tabindex="-1" aria-labelledby="modalAdicionarUCTitle"
                         aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
                             <div class="modal-content">
 
-                                <div class="modal-header">
+                                <div class="modal-header" style="background:#004A8D; color:white;">
                                     <h5 class="modal-title" id="modalAdicionarUCTitle">Adicionar UC</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
 
-                                <div class="modal-body">
-                                    <form asp-action="CadastrarUC" asp-controller="Cadastro">
-                                        <div class="mb-3">
-                                            <label for="nomeUC" class="form-label">Nome da UC</label>
-                                            <div class="input-icon d-flex align-items-center">
-                                                <span class="icon"><i class="far fa-file-alt"></i></span>
-                                                <input type="text" id="nomeUC" name="NomeUC" class="form-control"
-                                                    placeholder="Digite o nome da UC" required />
+                                <div class="modal-body p-4">
+                                    <form asp-action="CadastrarUC" asp-controller="Cadastro" method="post">
+
+                                        <div class="row g-3">
+
+                                            <!-- Nome -->
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold">Nome</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                                    <input type="text" name="Nome" class="form-control"
+                                                        placeholder="Nome da UC/Registro" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="qtdAulas" class="form-label">Quantidade de Aulas</label>
-                                            <div class="input-icon d-flex align-items-center">
-                                                <span class=" icon"><i class="far fa-list-ol"></i></span>
-                                                <input type="number" id="qtdAulas" name="QuantidadeAulas"
-                                                    class="form-control" min="1" placeholder="Ex: 5" required />
+
+                                            <!-- Data da Aula -->
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold">Data da Aula</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i
+                                                            class="bi bi-calendar-date"></i></span>
+                                                    <input type="date" name="DataAula" class="form-control" required>
+                                                </div>
                                             </div>
+
+                                            <!-- Quantidade de Aulas -->
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold">Quantidade de Aulas</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="bi bi-list-ol"></i></span>
+                                                    <input type="number" min="1" name="QtsAulas" class="form-control"
+                                                        placeholder="Ex: 4" required>
+                                                </div>
+                                            </div>
+
+                                            <!-- Hora Chegada -->
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold">Hora de Chegada</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="bi bi-alarm"></i></span>
+                                                    <input type="time" name="HoraChegada" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <!-- Hora Saída -->
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold">Hora de Saída</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i
+                                                            class="bi bi-alarm-fill"></i></span>
+                                                    <input type="time" name="HoraSaida" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <!-- Lançamento -->
+                                            <div class="col-md-6 d-flex align-items-end">
+                                                <div class="form-check" style="padding-left: 2rem;">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        id="lancamentoCheck">
+                                                    <label class="form-check-label fw-bold" for="lancamentoCheck">
+                                                        Lançamento SS Feito?
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Data Início -->
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold">Data Início</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i
+                                                            class="bi bi-calendar-event"></i></span>
+                                                    <input type="date" name="DataInicio" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <!-- Data Fim -->
+                                            <div class="col-md-6">
+                                                <label class="form-label fw-bold">Data Fim</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i
+                                                            class="bi bi-calendar-check"></i></span>
+                                                    <input type="date" name="DataFim" class="form-control" required>
+                                                </div>
+                                            </div>
+
+                                            <!-- Turma -->
+                                            <div class="col-md-12">
+                                                <label class="form-label fw-bold">Turma</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="bi bi-people"></i></span>
+                                                    <select class="form-select" name="TurmaId" required>
+                                                        <option value="">Selecione uma turma</option>
+                                                        @foreach (var t in ViewBag.ListaTurmas)
+                                                        {
+                                                            <option value="@t.Id">@t.Nome</option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                            </div>
+
                                         </div>
 
+                                        <!-- Botões -->
+                                        <div class="text-end mt-4">
+                                            <button type="button" class="btn btn-secondary px-4"
+                                                data-bs-dismiss="modal">
+                                                Cancelar
+                                            </button>
+                                            <button type="submit" class="btn"
+                                                style="background:#F7941D; color:white; font-weight:bold;">
+                                                Salvar
+                                            </button>
+                                        </div>
 
-                                        <div class="mb-3">
-                                            <label for="turma" class="form-label">Turma</label>
-                                            <select class="form-select" id="turma" name="TurmaId" required>
-                                                <option value="">Selecione uma turma</option>
-                                                @foreach (var t in ViewBag.ListaTurmas)
-                                                {
-                                                    <option value="@t.Id">@t.Nome</option>
-                                                }
-                                            </select>
-                                        </div>
-                                        <div class="text-end mt-3">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Cancelar</button>
-                                            <button type="submit" class="btn btn-primary">Cadastrar UC</button>
-                                        </div>
                                     </form>
                                 </div>
+
                             </div>
                         </div>
                     </div>

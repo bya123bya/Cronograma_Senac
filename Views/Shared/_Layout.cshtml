@@ -48,34 +48,32 @@
     </nav>
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-top">
-        <div class="container-fluid d-flex align-items-center">
+        <div class="container-fluid">
 
             <!-- Nome do sistema (esquerda) -->
             <a class="navbar-brand me-4" href="#">CronogramaSenac</a>
 
             <!-- Barra de Pesquisa (centro) -->
             <div class="nav-search-container">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Pesquisar Ctrl K">
+                <div class="topbar">
+                    <div class="search-area">
+                        <input type="text" placeholder="Pesquisar Ctrl K">
+                    </div>
                 </div>
-            </div>
 
-            <!-- Ícones e Perfil (direita) -->
-            <div class="d-flex align-items-center ms-auto">
-                <i class="far fa-bell fa-lg text-secondary mx-3 user-icon"></i>
-                <i class="fas fa-cog fa-lg text-secondary mx-3 user-icon"></i>
-
-                <div class="d-flex align-items-center user-profile ms-2">
-                    <div class="me-2 text-end d-none d-lg-block">
-                        <span class="user-name">Jennifer Vitória de Lima</span>
-                        <small class="d-block user-title">Coordenadora</small>
+                <!-- Ícones e Perfil (direita) -->
+                <div class="actions-area">
+                    <i class="fa-regular fa-bell"></i>
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="profile">
+                    <div class="profile-info">
+                        <span class="profile-name">Vitória de Lima</span>
+                        <span class="profile-role">Coordenadora</span>
                     </div>
                     <img src="./img/perfil.jpg" alt="Perfil" class="rounded-circle profile-img" />
                 </div>
             </div>
-
-        </div>
     </nav>
 
 

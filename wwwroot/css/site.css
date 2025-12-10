@@ -66,6 +66,17 @@ html {
   background-color: #e9ecef;
   border-left: 3px solid #007bff;
 }
+/* Estilo da Logo Senac */
+.sidebar-logo-container {
+  padding: 1.5rem 1rem 0.5rem 1rem;
+  text-align: center;
+}
+
+.sidebar-logo {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+}
 
 /* Ajuste para o conteúdo principal para não ser coberto pela sidebar */
 main {
@@ -85,6 +96,7 @@ main {
   width: calc(100% - 250px);
   height: 60px; /* Altura fixa para a Navbar */
 }
+
 /* Estilo da barra de pesquisa na Navbar */
 .search-bar {
   max-width: 400px;
@@ -94,17 +106,6 @@ main {
     width: 32px;
     height: 32px;
     object-fit: cover;
-}
-/* Estilo da Logo Senac */
-.sidebar-logo-container {
-  padding: 1.5rem 1rem 0.5rem 1rem;
-  text-align: center;
-}
-
-.sidebar-logo {
-  width: 100%;
-  height: auto;
-  max-width: 150px;
 }
 
 /* === Estilos da Tabela (Movidos do Index.cshtml) === */
@@ -180,6 +181,87 @@ table.table-hover tbody tr td {
 
 .user-icon:hover {
     color: #0d6efd !important; /* Cor ao passar o mouse */
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: 8px 100px;
+  background: white;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.search-area {
+  flex: 1; /* mantém ela ocupando boa parte do topo */
+  display: flex;
+  justify-content: center;
+}
+.search-area .search-bar {
+  width: 60%;
+  max-width: 500px;
+}
+.search-area input {
+  width: 100%; 
+  max-width: 650px; /* garante que não fique gigante em monitores muito grandes */
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+/* Ícones + Perfil alinhados à direita */
+.nav-right {
+  margin-left: auto;      /* EMPURRA tudo para o canto direito */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Nome e foto colados no canto direito */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.actions-area {
+  display: flex;
+  align-items:center;
+  padding: 10px 60px;
+  gap: 40px; /* Espaçamento entre ícones e perfil */
+}
+
+.actions-area i {
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.profile {
+  margin-left:auto;   /* empurra só o perfil para a direita */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre texto e imagem */
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  line-height: 1.1;
+}
+
+.profile-name {
+  font-weight: 600;
+}
+
+.profile-role {
+  font-size: 12px;
+  color: #777;
+}
+
+.profile-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .user-profile {

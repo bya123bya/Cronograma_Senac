@@ -34,5 +34,63 @@ namespace CronogramaSenac.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+        [HttpPost]
+        [Route("CadastrarUC")]
+        public IActionResult CadastrarUC(Uc uc, string TurmaId)
+        {
+            uc.Lancamento = false;
+
+            //Armazenar o usuario 
+            context.Add(uc);
+            //Registrar as alterações no banco de dados
+            context.SaveChanges();
+
+            if (TurmaId != null && TurmaId.Count() > 0)
+            {
+                TurmaUc tmuc = new TurmaUc()
+                {
+                    UcId = uc.Id,
+                    CargaHoraria = (int?)CalcularCargaHorariaTotal(uc.DataInicio, uc.DataFim, uc.HoraChegada, uc.HoraSaida),
+                    TurmaId = int.Parse(TurmaId)
+                };
+
+                context.Add(tmuc);
+
+                context.SaveChanges();
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        private double CalcularCargaHorariaTotal(DateOnly? dataInicio, DateOnly? dataFim, TimeOnly? horaInicio, TimeOnly? horaFim)
+        {
+            // Verificação correta de null
+            if (dataInicio is null || dataFim is null || horaInicio is null || horaFim is null)
+                return 0;
+
+            // Pega os valores já que não são nulos
+            DateOnly inicio = dataInicio.Value;
+            DateOnly fim = dataFim.Value;
+            TimeOnly hInicio = horaInicio.Value;
+            TimeOnly hFim = horaFim.Value;
+
+            // Carga horária diária
+            double horasPorDia = (hFim - hInicio).TotalHours;
+
+            double totalHoras = 0;
+
+            // Loop de datas
+            for (DateOnly data = inicio; data <= fim; data = data.AddDays(1))
+            {
+                if (data.DayOfWeek == DayOfWeek.Saturday || data.DayOfWeek == DayOfWeek.Sunday)
+                    continue;
+
+                totalHoras += horasPorDia;
+            }
+
+            return totalHoras;
+        }
+
     }
 }
