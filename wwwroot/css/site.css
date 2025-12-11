@@ -1,5 +1,6 @@
 @import "bootstrap-icons/font/bootstrap-icons";
 
+
 /* === Estilos Globais e Resets (Geral) === */
 * {
   margin: 0px;
@@ -340,4 +341,112 @@ table.table-hover tbody tr td {
 
 .search-box input::placeholder {
   color: #bfbfbf;
+}
+/* === Breadcrumb estilo Monday === */
+.breadcrumb {
+    background: transparent;
+    padding-left: 0;
+    margin-bottom: 0.8rem;
+}
+
+.breadcrumb-item a {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1f76ff;
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    font-size: 20px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* === Botões de visualização (Lista / Painel / Tabela etc.) === */
+.btn-group .btn {
+    border-radius: 10px !important;
+    padding: 6px 14px;
+    border-color: #ddd;
+    font-weight: 500;
+    color: #555;
+}
+
+.btn-group .btn.active,
+.btn-group .btn:hover {
+    background-color: #e8f0ff;
+    border-color: #bcd4ff;
+    color: #1f76ff !important;
+}
+
+/* === Dropdown buttons (Grupo: Status, Subtarefas, Colunas) === */
+.btn-outline-secondary.dropdown-toggle {
+    border-radius: 10px;
+    border-color: #ddd;
+    color: #555;
+    padding: 6px 14px;
+}
+
+.btn-outline-secondary.dropdown-toggle:hover {
+    background-color: #f7f9ff;
+    border-color: #bcd4ff;
+    color: #1f76ff;
+}
+
+/* === Botão "+ Add Turma" === */
+.btn-primary {
+    background-color: #1767ff !important;
+    border-radius: 10px !important;
+    padding: 8px 20px;
+    font-weight: 600;
+}
+
+/* === Botão Filtro === */
+.btn-outline-secondary i {
+    margin-right: 5px;
+}
+
+.btn-outline-secondary {
+    border-radius: 10px;
+    padding: 6px 14px;
+    border-color: #ddd;
+    color: #555;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f0f4ff !important;
+    border-color: #bcd4ff !important;
+    color: #1f76ff !important;
+}
+
+/* === Ajustes de espaçamento geral da seção === */
+.visual-header {
+    background: #fff;
+    padding: 18px 22px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 22px;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+    content: none !important;
+}
+/* Aumentar tamanho do conteúdo das células da tabela */
+table td, 
+table th {
+    font-size: 18px !important;    /* aumenta a fonte */
+    padding: 14px 18px !important; /* aumenta o espaçamento interno */
+    line-height: 1.4 !important;   /* melhora a leitura */
+}
+
+/* Cor padrão para todos os ícones FontAwesome */
+i.fa-solid,
+i.fa-regular,
+i.fa-light,
+i.fas,
+i.far {
+    color: #f8b400 !important; /* amarelo alaranjado */
+}
+
+/* Se quiser aplicar apenas nos ícones dos botões */
+.visual-header i {
+    color: #f8b400 !important;
 }

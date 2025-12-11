@@ -1,7 +1,9 @@
 @{
     Layout = "~/Views/Shared/_LayoutStart.cshtml";
 }
-
+<div class="header-logo">
+    <img src="./img/senac.jpg" alt="Logo Senac" />
+</div>
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
     <div class="card-login w-100" style="max-width: 430px;">
 
@@ -25,7 +27,7 @@
                 <label>Senha</label>
                 <div class="input-icon">
                     <span class="icon"><i class="fas fa-key"></i></span>
-                          <input type="password" name="senha" placeholder="********" required id="senha"/>
+                    <input type="password" name="senha" placeholder="********" required id="senha" />
                     <span class="toggle-password" onclick="toggleSenha('senha')"><i class="fas fa-eye"></i></span>
                 </div>
             </div>
@@ -127,12 +129,24 @@
     .btn-entrar:hover {
         background-color: #0f396f !important;
     }
+
+    .header-logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 9999;
+    }
+
+    .header-logo img {
+        width: 130px;
+        height: auto;
+    }
 </style>
 <script>
     function toggleSenha(idCampo) {
         const campo = document.getElementById(idCampo);
         const icon = campo.parentElement.querySelector(".toggle-password i");
- 
+
         if (campo.type === "password") {
             campo.type = "text";
             icon.classList.replace("fa-eye", "fa-eye-slash");
@@ -142,4 +156,3 @@
         }
     }
 </script>
- 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CronogramaSenac</title>
+    <title>@ViewData["Title"] CronogramaSenac</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -51,7 +51,9 @@
         <div class="container-fluid">
 
             <!-- Nome do sistema (esquerda) -->
-            <a class="navbar-brand me-4" href="#">CronogramaSenac</a>
+            <div class="breadcrumb-item">
+                <a href="#" class="text-decoration-none">CronogramaSenac</a>
+            </div>
 
             <!-- Barra de Pesquisa (centro) -->
             <div class="nav-search-container d-flex justify-content-center">
