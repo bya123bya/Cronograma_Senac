@@ -32,7 +32,7 @@ namespace CronogramaSenac.Controllers
             //Registrar as alterações no banco de dados
             context.SaveChanges();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Login");
         }
 
         [HttpPost]
@@ -56,6 +56,32 @@ namespace CronogramaSenac.Controllers
                 };
 
                 context.Add(tmuc);
+
+                context.SaveChanges();
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+        [HttpPost]
+
+        [Route("CadastrarTurma")]
+        public IActionResult CadastrarTurma(Turma turma, string UsuarioId)
+        {
+            //Armazenar a turma 
+            context.Add(turma);
+
+            //Registrar as alterações no banco de dados
+            context.SaveChanges();
+
+            if (UsuarioId != null && UsuarioId.Count() > 0)
+            {
+                UsuarioTurma us = new UsuarioTurma()
+                {
+                    TurmaId = turma.Id,
+                    UsuarioId = int.Parse(UsuarioId)
+                };
+
+                context.Add(us);
 
                 context.SaveChanges();
             }

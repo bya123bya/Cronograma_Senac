@@ -24,6 +24,11 @@ public class HomeController : Controller
                     .ToList();
 
         ViewBag.ListaTurmas = listaTurmas;
+
+        var listaProfessores = context.Usuarios.Where(x => x.TipoUsuarioId == 4);
+
+        ViewBag.ListaProfessores = listaProfessores;
+
         return View();
     }
 

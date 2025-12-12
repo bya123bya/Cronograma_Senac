@@ -64,7 +64,8 @@
                         </div>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modalAdicionarTurma">
                             + Add Turma
                         </button>
                     </div>
@@ -133,7 +134,13 @@
                         </tr>
 
                     </tbody>
-                    <!-- MODAL ADICIONAR UC -->
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL ADICIONAR UC -->
                     <div class="modal fade" id="modalAdicionarUC" tabindex="-1" aria-labelledby="modalAdicionarUCTitle"
                         aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -266,7 +273,70 @@
                         </div>
                     </div>
 
-                </table>
+
+<!-- MODAL ADICIONAR Turma -->
+<div class="modal fade" id="modalAdicionarTurma" tabindex="-1" aria-labelledby="modalAdicionarTurmaTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header" style="background:#004A8D; color:white;">
+                <h5 class="modal-title" id="modalAdicionarTurmaTitle">Adicionar Turma</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-4">
+                <form asp-action="CadastrarTurma" asp-controller="Cadastro" method="post">
+
+                    <div class="row g-3">
+
+                        <!-- Nome -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Nome</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input type="text" name="Nome" class="form-control" placeholder="Nome da UC/Registro"
+                                    required>
+                            </div>
+                        </div>
+                        <!-- Descrição -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Descrição</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                <input type="text" name="Descrição" class="form-control" placeholder="Descrição da Turma"
+                                    required>
+                            </div>
+                        </div>
+
+                        <!-- Professor -->
+                        <div class="col-md-12">
+                            <label class="form-label fw-bold">Professor</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-people"></i></span>
+                                <select class="form-select" name="UsuarioId" required>
+                                    <option value="">Selecione um professor</option>
+                                    @foreach (Usuario professor in ViewBag.listaProfessores)
+                                    {
+                                        <option value="@professor.Id">@professor.Nome</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Botões -->
+                        <div class="text-end mt-4">
+                            <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn"
+                                style="background:#F7941D; color:white; font-weight:bold;">
+                                Salvar
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
